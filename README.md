@@ -1,6 +1,4 @@
-# 📚 Tutorial Singkat Git
-
-## 🚀 Pengantar
+# 📚 Latihan Singkat Git LAGEE
 
 Git adalah sistem kontrol versi yang digunakan untuk melacak perubahan dalam file dan folder. Dalam tutorial ini, kita akan membahas tentang tiga branch utama yaitu `main`, `wahyupratama`, dan `feature/new-login`, serta cara menggunakan perintah dasar Git.
 
@@ -12,164 +10,172 @@ Git adalah sistem kontrol versi yang digunakan untuk melacak perubahan dalam fil
 
 ## 🛠️ Perintah Dasar Git
 
-### 1. **Git Clone**
+1. **Git Clone**  
+   Membuat salinan lokal dari repositori remote.
 
-Membuat salinan lokal dari repositori remote.
+   ```bash
+   git clone <url-repositori>
+   ```
 
-bash
-git clone
+2. **Git Status**  
+   Menampilkan status repositori lokal.
 
-### 2. **Git Status**
+   ```bash
+   git status
+   ```
 
-Menampilkan status repositori lokal.
+3. **Git Add**  
+   Menambahkan perubahan ke staging area.
 
-bash
-git status
+   ```bash
+   git add <nama-file>
+   ```
 
-### 3. **Git Add**
+   atau untuk menambahkan semua file:
 
-Menambahkan perubahan ke staging area.
+   ```bash
+   git add .
+   ```
 
-bash
-git add
+4. **Git Commit**  
+   Menyimpan perubahan yang telah ditambahkan ke staging area.
 
-atau untuk menambahkan semua file
-git add .
+   ```bash
+   git commit -m "Pesan commit yang menjelaskan perubahan"
+   ```
 
-### 4. **Git Commit**
+5. **Git Push**  
+   Mengirimkan perubahan dari lokal ke remote.
 
-Menyimpan perubahan yang telah ditambahkan ke staging area.
+   ```bash
+   git push origin <nama-branch>
+   ```
 
-bash
-git commit -m "Pesan commit yang menjelaskan perubahan"
+6. **Git Pull**  
+   Mengambil dan menggabungkan perubahan dari remote ke lokal.
 
-### 5. **Git Push**
+   ```bash
+   git pull origin <nama-branch>
+   ```
 
-Mengirimkan perubahan dari lokal ke remote.
+7. **Git Merge**  
+   Menggabungkan perubahan dari satu branch ke branch lainnya.
 
-bash
-git push origin
+   ```bash
+   git checkout main
+   git merge wahyupratama
+   ```
 
-### 6. **Git Pull**
+8. **Git Branch**  
+   Menampilkan daftar branch dan membuat branch baru.
 
-Mengambil dan menggabungkan perubahan dari remote ke lokal.
+   ```bash
+   git branch          # Menampilkan daftar branch
+   git branch <nama-branch>  # Membuat branch baru
+   ```
 
-bash
-git pull origin
+9. **Git Checkout**  
+   Berpindah antara branch.
 
-### 7. **Git Merge**
+   ```bash
+   git checkout <nama-branch>
+   ```
 
-Menggabungkan perubahan dari satu branch ke branch lainnya.
+10. **Git Log**  
+    Menampilkan riwayat commit.
 
-bash
-git checkout main
-git merge wahyupratama
+    ```bash
+    git log
+    ```
 
-### 8. **Git Branch**
+11. **Git Remote**  
+    Mengelola remote repository.
 
-Menampilkan daftar branch dan membuat branch baru.
+    ```bash
+    git remote -v           # Melihat remote yang ada
+    git remote add <nama> <url-repositori>  # Menambahkan remote baru
+    ```
 
-bash
-git branch
-git branch
-
-### 9. **Git Checkout**
-
-Berpindah antara branch.
-
-bash
-git checkout
-
-### 10. **Git Log**
-
-Menampilkan riwayat commit.
-
-bash
-git log
-
-### 11. **Git Remote**
-
-Mengelola remote repository.
-
-bash
-git remote -v
-git remote add
-
-### 12. **Git Fetch**
-
-Mengambil perubahan dari remote tanpa menggabungkannya.
-
-bash
-git fetch origin
+12. **Git Fetch**  
+    Mengambil perubahan dari remote tanpa menggabungkannya.
+    ```bash
+    git fetch origin
+    ```
 
 ## 📌 Contoh Penggunaan dalam Tiga Branch
 
-### 1. **Membuat Branch Baru**
+1. **Membuat Branch Baru**  
+   Misalkan kita ingin membuat branch baru bernama `feature/new-login`.
 
-Misalkan kita ingin membuat branch baru bernama `feature/new-login`.
+   ```bash
+   git branch feature/new-login
+   ```
 
-bash
-git branch feature/new-login
+2. **Beralih ke Branch Baru**
 
-### 2. **Beralih ke Branch Baru**
+   ```bash
+   git checkout feature/new-login
+   ```
 
-bash
-git checkout feature/new-login
+3. **Melakukan Perubahan dan Commit**  
+   Misalkan kita membuat perubahan pada file `login.js`.
 
-### 3. **Melakukan Perubahan dan Commit**
+   ```bash
+   git add login.js
+   git commit -m "Menambahkan fitur login baru"
+   ```
 
-Misalkan kita membuat perubahan pada file `login.js`.
+4. **Push Perubahan ke Remote**
 
-bash
-git add login.js
-git commit -m "Menambahkan fitur login baru"
+   ```bash
+   git push origin feature/new-login
+   ```
 
-### 4. **Push Perubahan ke Remote**
+5. **Beralih ke Branch `main`**
 
-bash
-git push origin feature/new-login
+   ```bash
+   git checkout main
+   ```
 
-### 5. **Beralih ke Branch `main`**
+6. **Pull Perubahan Terbaru dari Remote**
 
-bash
-git checkout main
+   ```bash
+   git pull origin main
+   ```
 
-### 6. **Pull Perubahan Terbaru dari Remote**
+7. **Merge Branch `feature/new-login` ke `main`**
 
-bash
-git pull origin main
+   ```bash
+   git merge feature/new-login
+   ```
 
-### 7. **Merge Branch `feature/new-login` ke `main`**
+8. **Push Perubahan ke Remote**
 
-bash
-git merge feature/new-login
+   ```bash
+   git push origin main
+   ```
 
-### 8. **Push Perubahan ke Remote**
+9. **Beralih ke Branch `wahyupratama`**
 
-bash
-git push origin main
+   ```bash
+   git checkout wahyupratama
+   ```
 
-### 9. **Beralih ke Branch `wahyupratama`**
+10. **Pull Perubahan Terbaru dari Remote**
 
-bash
-git checkout wahyupratama
+    ```bash
+    git pull origin wahyupratama
+    ```
 
-### 10. **Pull Perubahan Terbaru dari Remote**
+11. **Merge Branch `main` ke `wahyupratama`**
 
-bash
-git pull origin wahyupratama
+    ```bash
+    git merge main
+    ```
 
-### 11. **Merge Branch `main` ke `wahyupratama`**
-
-bash
-git merge main
-
-### 12. **Push Perubahan ke Remote**
-
-bash
-git push origin wahyupratama
+12. **Push Perubahan ke Remote**
+    ```bash
+    git push origin wahyupratama
+    ```
 
 ## 🎉 Penutup
-
-Dengan memahami dan menggunakan perintah-perintah ini, Anda dapat lebih efektif dalam mengelola proyek Git Anda. Jika ada pertanyaan lebih lanjut atau butuh penjelasan lebih detail, silakan beri tahu!  
-
